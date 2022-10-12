@@ -25,9 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: APK Build action
-      uses: MayMeow/apk-build/action@v1
+      uses: gradle/gradle-build-action@v2
       with:
-        android-compile-sdk: "30"
-        android-build-tools: "30.0.2"
-        android-sdk-tools: "6514223"
-    
+        arguments: build
+        build-root-directory: ./android
