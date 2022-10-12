@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/drupal-links-action.json": "file:///workspace/ioVue/.github/workflows/android.yml"
+    }
+}
