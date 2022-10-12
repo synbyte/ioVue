@@ -1,6 +1,7 @@
 name: android
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
+  workflow_dispatch:
   push:
     branches: [ "master" ]
   pull_request:
@@ -19,11 +20,13 @@ jobs:
       with:
         java-version: 11
     - name: Make Gradle executable
-      run: chmod +x ./gradlew
+      run: chmod +x ./android/gradlew
+    - name: Init Gradle
+      run:  ./android/gradlew init
     - name: Build Release APK
-      run: ./gradlew assembleRelease
+      run: ./android/gradlew assembleRelease
     - name: Releasing using Hub
       uses: r0user/release-apk@main
       env:
        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-       APP_FOLDER: app
+       APP_FOLDER: android/app
