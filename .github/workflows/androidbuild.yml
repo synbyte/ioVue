@@ -25,5 +25,6 @@ jobs:
     
       run: chmod +x ./android/gradlew
     - name: Build with Gradle
-      run: ./android/gradlew init
-      run: ./android/gradlew build
+      run: |
+            ./android/gradlew init
+            ./android/gradlew build
