@@ -21,6 +21,8 @@ jobs:
         java-version: 11
     - name: Make Gradle executable
       run: chmod +x ./android/gradlew
+    - name: Init Gradle
+      run:  ./android/gradlew init
     - name: Build Release APK
       run: ./android/gradlew assembleRelease
     - name: Releasing using Hub
